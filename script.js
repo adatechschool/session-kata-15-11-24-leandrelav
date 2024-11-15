@@ -1,3 +1,32 @@
+const latinToMorse = {
+  A: ".-",
+  B: "-...",
+  C: "-.-.",
+  D: "-..",
+  E: ".",
+  F: "..-.",
+  G: "--.",
+  H: "....",
+  I: "..",
+  J: ".---",
+  K: "-.-",
+  L: ".-..",
+  M: "--",
+  N: "-.",
+  O: "---",
+  P: ".--.",
+  Q: "--.-",
+  R: ".-.",
+  S: "...",
+  T: "-",
+  U: "..-",
+  V: "...-",
+  W: ".--",
+  X: "-..-",
+  Y: "-.--",
+  Z: "--..",
+};
+
 // ETAPE 1
 function getLatinCharacterList(text) {
   let letterList = []; //init d'un tableau vide
@@ -9,4 +38,13 @@ function getLatinCharacterList(text) {
   return letterList;
 }
 
-console.log(getLatinCharacterList("hello world"));
+// ETAPE 2
+function translateLatinCharacter(letter) {
+  if (latinToMorse[letter]) {
+    return latinToMorse[letter];
+  } else {
+    return "";
+  }
+}
+
+console.log(translateLatinCharacter("A"));
