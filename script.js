@@ -47,4 +47,5 @@ function translateLatinCharacter(letter) {
   }
 }
 
+console.log(getLatinCharacterList("Hello World"));
 console.log(translateLatinCharacter("A"));
