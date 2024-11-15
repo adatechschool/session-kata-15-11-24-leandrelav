@@ -1,3 +1,4 @@
+// ANNEXE 1
 const latinToMorse = {
   A: ".-",
   B: "-...",
@@ -37,6 +38,7 @@ function getLatinCharacterList(text) {
 
   return letterList;
 }
+console.log(getLatinCharacterList("Hello World"));
 
 // ETAPE 2
 function translateLatinCharacter(letter) {
@@ -46,6 +48,18 @@ function translateLatinCharacter(letter) {
     return "";
   }
 }
-
-console.log(getLatinCharacterList("Hello World"));
 console.log(translateLatinCharacter("A"));
+
+// ETAPE 3
+function encode(text) {
+  let uppercaseText = text.toUpperCase();
+  let textList = getLatinCharacterList(uppercaseText); //fonctionne maintenant en majuscules ET MINUSCULES
+  let morseText = "";
+
+  textList.forEach((letter) => {
+    morseText += translateLatinCharacter(letter) + " ";
+  });
+
+  return morseText;
+}
+console.log(encode("gaga GOUGOU"));
